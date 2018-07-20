@@ -1,0 +1,7 @@
+<h2>Current brands at <%= @store.store %></h2>
+
+<ol>
+  <% @store.brands.each do |brand| %>
+    <li><%= brand.shoe_brand %></li>
+  <%end%>
+</ol>

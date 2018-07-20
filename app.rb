@@ -13,9 +13,9 @@ get('/stores') do
   erb(:stores)
 end
 
-post('/stores/:id') do
-  @stores = Store.all
-  erb(:stores)
+get('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i)
+  erb(:store_info)
 end
 
 get('/admin') do
@@ -68,8 +68,6 @@ end
 post('/admin/stores/brands/:id') do
   store = Store.find(params.fetch("select_a_store").to_i)
   brands = Brand.find(params.fetch("select_a_brand"))
-  binding.pry
   store.brands.push(brands)
-  binding.pry
   redirect '/admin/brands'
 end

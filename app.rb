@@ -23,3 +23,7 @@ post('/admin/stores/:id') do
   @stores = Store.all
   redirect '/admin'
 end
+
+patch('/admin/stores/:id') do
+
+end

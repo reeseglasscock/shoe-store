@@ -1,3 +1,3 @@
 class Brand < ActiveRecord::Base
-  has_many_and_belongs_to :stores
+  has_and_belongs_to_many :stores
 end

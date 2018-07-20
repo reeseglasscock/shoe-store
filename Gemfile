@@ -15,6 +15,7 @@ gem("thin")
 group(:test) do
   gem("rspec")
   gem("pry")
+  gem("capybara", :require => "capybara/rspec")
   gem("capybara")
   gem("shoulda-matchers", '~> 2.0')
 end

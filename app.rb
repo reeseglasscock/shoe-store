@@ -22,6 +22,12 @@ get('/admin/stores') do
   erb(:edit_stores)
 end
 
+get('/admin/brands') do
+  @stores = Store.all
+  @brands = Brand.all
+  erb(:add_brands)
+end
+
 post('/admin/stores/:id') do
   @stores = Store.all
   store = params.fetch("new_store")
@@ -51,4 +57,13 @@ post('/admin/brands/:id') do
   shoe_brand_price = params.fetch("new_brand_price")
   @shoe_brand = Brand.create({:shoe_brand => shoe_brand, :price => shoe_brand_price})
   redirect '/admin/stores'
+end
+
+post('/admin/stores/brands/:id') do
+  store = Store.find(params.fetch("select_a_store").to_i)
+  brands = Brand.find(params.fetch("select_a_brand"))
+  binding.pry
+  store.brands.push(brands)
+  binding.pry
+  redirect '/admin/brands'
 end

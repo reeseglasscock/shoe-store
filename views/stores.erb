@@ -1,1 +1,8 @@
 <h2>Select a Store</h2>
+
+<ol>
+  <% @stores.each do |store| %>
+  <li><a href="/stores/<%= store.id %>"><%= store.store %></a></li>
+  <% end %>
+    </li>
+</ol>

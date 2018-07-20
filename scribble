@@ -1,0 +1,21 @@
+
+  <h5>Update a Shoes Location</h5>
+  <form class="form-group row" action="admin/stores/<%= @stores.ids %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+  <select class="form-control col-sm-4" name="shoe_store">
+    <% @stores.each do |store| %>
+    <option value="<%= store.id %>"><%= store.store %></option>
+    <%end%>
+  </select>
+  <div class="col-sm-4">
+    <input class="form-control" type="text" name="new_store_name" placeholder="New Name">
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-primary"type="submit">Update</button>
+  </div>
+  </form>
+
+  <form class="form-group" action="admin/stores/<%= @stores.ids %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete</button>
+  </form>

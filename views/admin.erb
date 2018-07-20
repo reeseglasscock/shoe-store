@@ -1,4 +1,4 @@
-<h2>Manage Shoes</h2>
+<h2>Manage Shoes Locations</h2>
 <div class="container">
   <h5>Add a Shoes Location</h5>
   <form class="form-group row" action="admin/stores/<%= @stores.ids %>" method="post">
@@ -40,4 +40,25 @@
     </div>
   </form>
 
+<h2>Manage Shoes Brands</h2>
+  <h5>Add a Brand</h5>
+  <form action="admin/brands/<%= @brands.ids %>" method="post">
+    <div class="form-group row">
+      <label for="new_brand" class="col-sm-3 col-form-label">New Brand</label>
+      <div class="col-sm-7">
+        <input type="new_brand" class="form-control" placeholder="Enter a new brand" name="new_brand">
+      </div>
+    </div>
+      <div class="form-group row">
+        <label for="new_brand_price" class="col-sm-3 col-form-label">Price</label>
+        <div class="col-sm-7">
+          <input type="new_brand_price" class="form-control" placeholder="Enter the new price" name="new_brand_price">
+        </div>
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+
+
+  </form>
 </div>

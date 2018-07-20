@@ -14,6 +14,7 @@ end
 
 get('/admin') do
   @stores = Store.all
+  @brands = Brand.all
   erb(:admin)
 end
 
@@ -37,5 +38,13 @@ delete('/admin/stores/:id') do
   @stores = Store.all
   @store = Store.find(params.fetch("shoe_store").to_i)
   @store.destroy
+  redirect '/admin'
+end
+
+post('/admin/brands/:id') do
+  @brands = Brand.all
+  shoe_brand = params.fetch("new_brand")
+  shoe_brand_price = params.fetch("new_brand_price")
+  @shoe_brand = Brand.create({:shoe_brand => shoe_brand, :price => shoe_brand_price})
   redirect '/admin'
 end

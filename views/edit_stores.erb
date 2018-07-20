@@ -1,0 +1,61 @@
+
+<div class="container">
+  <h2>Manage Shoes Locations</h2>
+  <h5>Add a Shoes Location</h5>
+  <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
+      <label for="new_store" class="col-sm-2 col-form-label">New Store</label>
+      <div class="col-sm-5">
+        <input type="new_store" class="form-control" placeholder="Enter a new store" name="new_store">
+      </div>
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+  </form>
+
+  <h5>Update a Shoes Location</h5>
+  <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+  <select class="form-control col-sm-4" name="shoe_store">
+    <% @stores.each do |store| %>
+    <option value="<%= store.id %>"><%= store.store %></option>
+    <%end%>
+  </select>
+  <div class="col-sm-4">
+    <input class="form-control" type="text" name="new_store_name" placeholder="New Name">
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-primary"type="submit">Update</button>
+  </div>
+  </form>
+
+  <h5>Remove a Shoes Location</h5>
+  <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <select class="form-control col-sm-4" name="shoe_store">
+      <% @stores.each do |store| %>
+      <option value="<%= store.id %>"><%= store.store %></option>
+      <%end%>
+    </select>
+    <div class="col-sm-2">
+      <button type="submit" name="button" class="btn btn-danger">Delete</button>
+    </div>
+  </form>
+
+<h2>Manage Shoes Brands</h2>
+  <h5>Add a Brand</h5>
+  <form class="form-row"action="brands/<%= @brands.ids %>" method="post">
+    <div class="form-group col-md-6">
+      <label for="new_brand" class="">New Brand</label>
+        <input type="new_brand" class="form-control" placeholder="Enter a new brand" name="new_brand">
+    </div>
+      <div class="form-group col-md-6">
+        <label for="new_brand_price">Price</label>
+          <input type="new_brand_price" class="form-control" placeholder="Enter the new price" name="new_brand_price">
+      </div>
+      <div class="form-group col-md-6">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+
+
+  </form>
+</div>

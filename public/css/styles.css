@@ -6,6 +6,10 @@ body {
   font-family: 'Righteous', cursive;
 }
 
+#manageShoes {
+  margin-top: 1.5em;
+}
+
 /* Footer Styling */
 
 html {
@@ -30,6 +34,7 @@ a:hover {
 .customerView {
   text-align: center;
 }
+
 .customerView p {
   font-size: 1.5em;
 }
@@ -40,6 +45,19 @@ a:hover {
   color: white;
   font-family: 'Righteous', cursive;
 }
+
+.adminView h2 {
+  background-color: rgb(255, 0, 183);
+  padding: 20px;
+  color: white;
+  font-family: 'Righteous', cursive;
+  text-align: center
+}
+
+.adminView h5 {
+  margin-top: 10px;
+}
+
 .content {
   flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
   padding: 0px;
@@ -58,4 +76,8 @@ a:hover {
 
 .footerLink {
   color: white;
+}
+
+.navbar, .navbar-light, .bg-light {
+  min-height: 60px;
 }

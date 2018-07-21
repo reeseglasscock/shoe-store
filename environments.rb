@@ -1,5 +1,5 @@
 configure :development do
- set :database, 'sqlite:///dev.db'
+ set :database, 'postgres'
  set :show_exceptions, true
 end
 

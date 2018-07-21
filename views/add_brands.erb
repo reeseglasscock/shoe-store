@@ -1,16 +1,18 @@
-<div class="container">
-  <h2>Assign Brands to Shoe Stores</h2>
-  <form class="form-group row" action="stores/brands/<%= @stores.ids %>" method="post">
-    <label for="select_a_store">Select a Store</label>
-  <select class="form-control" name="select_a_store">
-    <% @stores.each do |store| %>
-    <option value="<%= store.id %>"><%= store.store %></option>
-    <%end%>
-  </select>
+<div class="adminView">
+  <h2>Assign Brands to RFS Stores</h2>
+  <div class="container">
+    <form class="form-row" action="stores/brands/<%= @stores.ids %>" method="post">
+      <label for="select_a_store">Select a Store</label>
+    <select class="form-control" name="select_a_store">
+      <% @stores.each do |store| %>
+      <option value="<%= store.id %>"><%= store.store %></option>
+      <%end%>
+    </select>
   </div>
+</div>
 
-<div class="container">
-  <div class="form-group row">
+<div class="adminView">
+  <div class="form-row container">
   <label for="select_a_brand">Select Brands to add to your selected store</label>
   <select multiple class="form-control" id="select_a_brand" name="select_a_brand[]">
     <% @brands.each do |brand| %>
@@ -19,6 +21,7 @@
   </select>
 </div>
 </div>
-
-<button type="submit" class="btn btn-primary">Assign</button>
-  </form>
+<div class="container">
+  <button type="submit" class="btn btn-primary">Assign</button>
+    </form>
+</div>

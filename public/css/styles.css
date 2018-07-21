@@ -6,7 +6,7 @@ body {
   font-family: 'Righteous', cursive;
 }
 
-#manageShoes {
+#manageShoes, #assignBrands {
   margin-top: 1.5em;
 }
 
@@ -58,6 +58,14 @@ a:hover {
   margin-top: 10px;
 }
 
+.adminView label {
+  margin-top: 10px;
+}
+
+.centerButton {
+  align-content: center;
+}
+
 .content {
   flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
   padding: 0px;
@@ -68,8 +76,8 @@ a:hover {
 }
 .footer {
   flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
-  padding: 15px;
-  background-color: rgba(22, 22, 22, 0.8);
+  padding: 10px;
+  background-color: rgb(22, 22, 22);
   color: white;
   margin-top: 1px;
 }
@@ -80,4 +88,14 @@ a:hover {
 
 .navbar, .navbar-light, .bg-light {
   min-height: 60px;
+}
+
+.btn-primary {
+  background-color: rgb(160, 13, 255);
+  border-color: rgb(160, 13, 255);
+}
+
+.btn-primary:hover {
+  background-color: rgb(206, 12, 232);
+  border-color: rgb(206, 12, 232);
 }

@@ -3,6 +3,7 @@ Bundler.require(:default)
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
+require 'pry'
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file}
 
@@ -46,7 +47,7 @@ end
 
 patch('/admin/stores/:id') do
   @stores = Store.all
-  if @stores.empty?
+  if params.key?("shoe_store") == false
     redirect '/admin/stores'
   else
     store_id = params.fetch("shoe_store").to_i
@@ -59,7 +60,7 @@ end
 
 delete('/admin/stores/:id') do
   @stores = Store.all
-  if @stores.empty?
+  if params.key?("shoe_store") == false
     redirect '/admin/stores'
   else
     @store = Store.find(params.fetch("shoe_store").to_i)
@@ -77,7 +78,7 @@ post('/admin/brands/:id') do
 end
 
 post('/admin/stores/brands/:id') do
-  if Store.count == 0
+  if params.key?("select_a_store") || params.key?("select_a_brand")
     redirect '/admin/brands'
   else
     store = Store.find(params.fetch("select_a_store").to_i)
@@ -85,5 +86,4 @@ post('/admin/stores/brands/:id') do
     store.brands.push(brands)
     redirect '/admin/brands'
   end
-
 end

@@ -1,7 +1,7 @@
 <div class="adminView">
-    <h2>Manage Shoes Locations</h2>
+    <h2>Manage RFS Locations</h2>
     <div class="container">
-    <h5>Add a Shoes Location</h5>
+    <h5>Add a RFS Location</h5>
     <form class="form-row" action="stores/<%= @stores.ids %>" method="post">
       <label for="new_store" class="col-sm-2 col-form-label">New Store</label>
       <div class="col-sm-5">
@@ -14,7 +14,7 @@
 
 
 
-    <h5>Update a Shoes Location</h5>
+    <h5>Update a RFS Location</h5>
     <form class="form-row" action="stores/<%= @stores.ids %>" method="post">
       <input type="hidden" name="_method" value="patch">
     <select class="form-control col-sm-4" name="shoe_store">
@@ -31,7 +31,7 @@
     </div>
     </form>
 
-    <h5>Remove a Shoes Location</h5>
+    <h5>Remove an RFS Location</h5>
     <form class="form-row" action="stores/<%= @stores.ids %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <select class="form-control col-sm-4" name="shoe_store">
@@ -69,7 +69,7 @@
 
   </div>
 
-<h2 id="manageShoes">Manage Shoes Brands</h2>
+<h2 id="manageShoes">Manage RFS Brands</h2>
 <div class="container">
   <h5>Add a Brand</h5>
   <form class="form-row"action="brands/<%= @brands.ids %>" method="post">

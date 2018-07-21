@@ -1,7 +1,7 @@
-<h2>Current brands at <%= @store.store %></h2>
+<div class="customerView">
+  <h2>Current brands at <%= @store.store %></h2>
 
-<ol>
-  <% @store.brands.each do |brand| %>
-    <li><%= brand.shoe_brand %>, <%= ("$"+"%.2f" % brand.price) %> </li>
-  <%end%>
-</ol>
+    <% @store.brands.each do |brand| %>
+      <p><%= brand.shoe_brand %>: <%= ("$"+"%.2f" % brand.price) %> </p>
+    <%end%>
+</div>

@@ -1,8 +1,7 @@
-<h2>Select a Store</h2>
+<div class="customerView">
+  <h2>Our current list of Stores</h2>
 
-<ol>
-  <% @stores.each do |store| %>
-  <li><a href="/stores/<%= store.id %>"><%= store.store %></a></li>
-  <% end %>
-    </li>
-</ol>
+    <% @stores.each do |store| %>
+    <p><a href="/stores/<%= store.id %>"><%= store.store %></a></p>
+    <% end %>
+</div>

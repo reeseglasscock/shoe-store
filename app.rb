@@ -3,6 +3,7 @@ Bundler.require(:default)
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
+require 'pry'
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file}
 
@@ -77,7 +78,8 @@ post('/admin/brands/:id') do
 end
 
 post('/admin/stores/brands/:id') do
-  if params.key?("select_a_store") || params.key?("select_a_brand")
+  if Store.count == 0 || params.key?("select_a_brand") == false
+    binding.pry
     redirect '/admin/brands'
   else
     store = Store.find(params.fetch("select_a_store").to_i)

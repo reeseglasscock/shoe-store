@@ -1,6 +1,8 @@
-<h2>Welcome to Shoes</h2>
+<h2>Select a Store</h2>
 
-<a href="/stores"><button class="btn btn-primary" type="button" name="button">Stores</button></a>
-
-<h4>Admin Portal</h4>
-<a href="/admin"><button type="button" class="btn btn-primary">Login</button></a>
+<ol>
+  <% @stores.each do |store| %>
+  <li><a href="/stores/<%= store.id %>"><%= store.store %></a></li>
+  <% end %>
+    </li>
+</ol>

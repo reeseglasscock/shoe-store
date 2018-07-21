@@ -2,18 +2,18 @@
 <div class="container">
   <h2>Manage Shoes Locations</h2>
   <h5>Add a Shoes Location</h5>
-  <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
-      <label for="new_store" class="col-sm-2 col-form-label">New Store</label>
-      <div class="col-sm-5">
-        <input type="new_store" class="form-control" placeholder="Enter a new store" name="new_store">
-      </div>
-      <div class="col-sm-4">
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
+  <form class="form-row" action="stores/<%= @stores.ids %>" method="post">
+    <label for="new_store" class="col-sm-2 col-form-label">New Store</label>
+    <div class="col-sm-5">
+      <input type="new_store" class="form-control" placeholder="Enter a new store" name="new_store">
+    </div>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
   </form>
 
   <h5>Update a Shoes Location</h5>
-  <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
+  <form class="form-row" action="stores/<%= @stores.ids %>" method="post">
     <input type="hidden" name="_method" value="patch">
   <select class="form-control col-sm-4" name="shoe_store">
     <option selected disabled>Choose a location</option>
@@ -30,7 +30,7 @@
   </form>
 
   <h5>Remove a Shoes Location</h5>
-  <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
+  <form class="form-row" action="stores/<%= @stores.ids %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <select class="form-control col-sm-4" name="shoe_store">
       <option selected disabled>Choose a location</option>

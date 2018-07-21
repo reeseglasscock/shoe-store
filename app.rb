@@ -43,18 +43,26 @@ end
 
 patch('/admin/stores/:id') do
   @stores = Store.all
-  store_id = params.fetch("shoe_store").to_i
-  update_store = params.fetch("new_store_name")
-  @store = Store.find(store_id)
-  @store.update(store: update_store)
-  redirect '/admin/stores'
+  if @stores.empty?
+    redirect '/admin/stores'
+  else
+    store_id = params.fetch("shoe_store").to_i
+    update_store = params.fetch("new_store_name")
+    @store = Store.find(store_id)
+    @store.update(store: update_store)
+    redirect '/admin/stores'
+  end
 end
 
 delete('/admin/stores/:id') do
   @stores = Store.all
-  @store = Store.find(params.fetch("shoe_store").to_i)
-  @store.destroy
-  redirect '/admin/stores'
+  if @stores.empty?
+    redirect '/admin/stores'
+  else
+    @store = Store.find(params.fetch("shoe_store").to_i)
+    @store.destroy
+    redirect '/admin/stores'
+  end
 end
 
 post('/admin/brands/:id') do

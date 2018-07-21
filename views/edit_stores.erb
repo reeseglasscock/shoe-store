@@ -16,6 +16,7 @@
   <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
     <input type="hidden" name="_method" value="patch">
   <select class="form-control col-sm-4" name="shoe_store">
+    <option selected disabled>Choose a location</option>
     <% @stores.each do |store| %>
     <option value="<%= store.id %>"><%= store.store %></option>
     <%end%>
@@ -32,14 +33,16 @@
   <form class="form-group row" action="stores/<%= @stores.ids %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <select class="form-control col-sm-4" name="shoe_store">
+      <option selected disabled>Choose a location</option>
       <% @stores.each do |store| %>
       <option value="<%= store.id %>"><%= store.store %></option>
       <%end%>
     </select>
     <div class="col-sm-2">
-
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#warningdeletestore">Delete</button>
     </div>
+
+
 
     <div class="modal fade" id="warningdeletestore" tabindex="-1" role="dialog" aria-labelledby="warningdeletemodal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

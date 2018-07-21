@@ -1,5 +1,7 @@
 require("bundler/setup")
 Bundler.require(:default)
+require 'sinatra'
+require 'sinatra/activerecord'
 require './environments'
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file}

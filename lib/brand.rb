@@ -1,5 +1,11 @@
 class Brand < ActiveRecord::Base
   has_and_belongs_to_many :stores
-  validates(:shoe_brand, :presence => true)
+  before_validation :normalize_name, on: :create
+  validates(:shoe_brand, {:presence => true, :length => {:maximum => 100}})
+  validates(:price, {:presence => true})
 
+  private
+    def normalize_name
+      self.shoe_brand = shoe_brand.downcase.titleize
+    end
 end

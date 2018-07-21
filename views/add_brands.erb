@@ -14,7 +14,7 @@
   <label for="select_a_brand">Select Brands to add to your selected store</label>
   <select multiple class="form-control" id="select_a_brand" name="select_a_brand[]">
     <% @brands.each do |brand| %>
-    <option value="<%= brand.id %>"><%= brand.shoe_brand %>, <%= brand.price %> </option>
+    <option value="<%= brand.id %>"><%= brand.shoe_brand %>, <%= ("$"+"%.2f" % brand.price) %> </option>
     <%end%>
   </select>
 </div>

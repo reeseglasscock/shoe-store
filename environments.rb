@@ -1,11 +1,3 @@
-development:
-  adapter: postgresql
-  database: shoe_store_development
-
-test:
-  adapter: postgresql
-  database: shoe_store_test
-
 configure :production do
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
 

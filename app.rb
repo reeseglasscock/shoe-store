@@ -74,8 +74,13 @@ post('/admin/brands/:id') do
 end
 
 post('/admin/stores/brands/:id') do
-  store = Store.find(params.fetch("select_a_store").to_i)
-  brands = Brand.find(params.fetch("select_a_brand"))
-  store.brands.push(brands)
-  redirect '/admin/brands'
+  if Store.count == 0
+    redirect '/admin/brands'
+  else
+    store = Store.find(params.fetch("select_a_store").to_i)
+    brands = Brand.find(params.fetch("select_a_brand"))
+    store.brands.push(brands)
+    redirect '/admin/brands'
+  end
+
 end
